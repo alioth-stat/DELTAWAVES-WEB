@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react"
 
 const navLinks = [
-  { label: "Proyectos", href: "#proyectos" },
   { label: "Equipo",    href: "#equipo"    },
-  { label: "Timeline",  href: "#timeline"  },
-  { label: "FAQ",       href: "#faq"       },
+  { label: "Demos",     href: "#demos"     },
+  { label: "Proyectos", href: "#proyectos" },
+  { label: "Eventos",   href: "#eventos"   },
+  { label: "Visión",    href: "#vision"    },
 ]
 
 export default function Navbar() {

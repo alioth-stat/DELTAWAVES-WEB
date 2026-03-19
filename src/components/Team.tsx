@@ -1,67 +1,91 @@
 const members = [
   {
     name: "Alioth Polo",
-    role: "Desarrollador IA & Fundador",
+    role: "Fundador · Desarrollador IA",
     initials: "AP",
-    desc: "Arquitecto principal de TYR Logistics OS y la plataforma unificada.",
+    bio: "Arquitecto principal de TYR Logistics OS y la plataforma unificada. Lleva la visión técnica de DELTAWAVES y coordina la integración de los proyectos.",
+    hue: "from-red-900 to-violet-900",
   },
   {
     name: "Nicole Ocque",
-    role: "Miembro del Equipo",
+    role: "Diseño & Desarrollo Frontend",
     initials: "NO",
-    desc: "Contribuye al diseño y desarrollo de las interfaces de usuario.",
+    bio: "Contribuye al diseño de interfaces y la experiencia de usuario de los proyectos. Especialista en hacer que la tecnología compleja se vea simple.",
+    hue: "from-violet-900 to-blue-900",
   },
   {
     name: "Martin Bundy",
-    role: "Miembro del Equipo",
+    role: "Desarrollo & Presentaciones",
     initials: "MB",
-    desc: "Participante clave en el desarrollo y presentación de los proyectos.",
+    bio: "Participante clave en el desarrollo y la presentación de los proyectos ante jueces y audiencias técnicas en hackathons y exposiciones.",
+    hue: "from-blue-900 to-cyan-900",
   },
   {
     name: "Damian Valdez",
-    role: "Miembro del Equipo",
+    role: "Desarrollo & Despliegue",
     initials: "DV",
-    desc: "Colaborador en el desarrollo y despliegue de las plataformas.",
+    bio: "Colaborador en el desarrollo y el despliegue de las plataformas. Contribuye al mantenimiento y la evolución continua del ecosistema DELTAWAVES.",
+    hue: "from-fuchsia-900 to-red-900",
   },
 ]
 
 export default function Team() {
   return (
-    <section id="equipo" className="py-24 grid-bg">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <p className="section-label mb-3">El Equipo</p>
+    <section id="equipo" className="py-32">
+      <div className="max-w-6xl mx-auto px-6">
+
+        {/* Header */}
+        <div className="text-center mb-20">
+          <p className="section-label mb-4">El Equipo</p>
           <h2
-            className="text-4xl md:text-5xl text-white mb-4"
+            className="text-5xl md:text-6xl text-white"
             style={{ fontFamily: "Instrument Serif, serif" }}
           >
-            Estudiantes de IA que{" "}
-            <span className="gradient-text italic">construyen el futuro</span>
+            Cuatro estudiantes.
+            <br />
+            <span className="gradient-text italic">Una misión.</span>
           </h2>
-          <p className="text-white/40 text-lg max-w-md mx-auto">
-            Técnico en Inteligencia Artificial · ITSE, Panamá
-          </p>
         </div>
 
+        {/* Portrait cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {members.map((m) => (
             <div
               key={m.name}
-              className="glass rounded-2xl p-6 flex flex-col items-center text-center gap-4 hover:bg-white/[0.06] transition-colors"
+              className="glass rounded-2xl overflow-hidden flex flex-col hover:bg-white/[0.06] transition-colors duration-300 group"
             >
-              {/* Avatar — white monogram on dark glass */}
-              <div className="w-16 h-16 rounded-2xl glass flex items-center justify-center text-white font-bold text-lg">
-                {m.initials}
+              {/* Portrait area */}
+              <div
+                className={`relative h-56 bg-gradient-to-br ${m.hue} flex items-end p-5 overflow-hidden`}
+              >
+                {/* Initials watermark */}
+                <span
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-bold text-white/5 select-none pointer-events-none leading-none"
+                  style={{ fontFamily: "Instrument Serif, serif" }}
+                >
+                  {m.initials}
+                </span>
+
+                {/* Name overlay at bottom */}
+                <div className="relative z-10">
+                  <p className="text-white font-semibold text-lg leading-tight">{m.name}</p>
+                  <p className="text-white/50 text-xs mt-0.5">{m.role}</p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-white font-semibold">{m.name}</h3>
-                <p className="text-white/40 text-xs mt-0.5">{m.role}</p>
+
+              {/* Bio */}
+              <div className="p-5 flex-1">
+                <p className="text-white/40 text-sm leading-relaxed">{m.bio}</p>
               </div>
-              <p className="text-white/30 text-xs leading-relaxed">{m.desc}</p>
-              <span className="tech-badge">ITSE · Panamá</span>
+
+              {/* Footer chip */}
+              <div className="px-5 pb-5">
+                <span className="tech-badge">ITSE · IA & Big Data</span>
+              </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   )

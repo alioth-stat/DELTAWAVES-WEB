@@ -1,14 +1,10 @@
 import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
-import LogosBar from "./components/LogosBar"
-import Projects from "./components/Projects"
-import FeaturesSection from "./components/FeaturesSection"
-import AISection from "./components/AISection"
-import TechStack from "./components/TechStack"
 import Team from "./components/Team"
-import Timeline from "./components/Timeline"
-import FAQ from "./components/FAQ"
-import CTABanner from "./components/CTABanner"
+import TryOut from "./components/TryOut"
+import Projects from "./components/Projects"
+import Events from "./components/Events"
+import VisionMision from "./components/VisionMision"
 import Footer from "./components/Footer"
 
 export default function App() {
@@ -16,16 +12,23 @@ export default function App() {
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
       <Navbar />
       <main>
+        {/* 1. Hero — full-screen banner with logo + AccretionBackground */}
         <Hero />
-        <LogosBar />
-        <Projects />
-        <FeaturesSection />
-        <AISection />
-        <TechStack />
+
+        {/* 2. Team — 4 portrait cards */}
         <Team />
-        <Timeline />
-        <FAQ />
-        <CTABanner />
+
+        {/* 3. TryOut — live demos + what is a digital twin */}
+        <TryOut />
+
+        {/* 4. Projects — all project cards */}
+        <Projects />
+
+        {/* 5. Events — past hackathons/expositions + upcoming */}
+        <Events />
+
+        {/* 6. Visión, Misión & How we met at ITSE */}
+        <VisionMision />
       </main>
       <Footer />
     </div>

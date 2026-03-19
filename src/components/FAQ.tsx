@@ -15,7 +15,7 @@ const items = [
   },
   {
     q: "¿Cómo se integran los dos proyectos?",
-    a: "TYR actúa como el shell (navbar, chat IA). El gemelo digital está accesible desde la ruta /twin. Los envíos activos de TYR aparecen como puntos en el mapa, y el estado del corredor (tráfico, incidentes) alimenta el contexto del AI Copilot. El diseño unificado usa liquid-glass cards con las fuentes Instrument Serif, Barlow y Azeret Mono.",
+    a: "TYR actúa como el shell (navbar, chat IA). El gemelo digital está accesible desde la ruta /twin. Los envíos activos de TYR aparecen como puntos en el mapa, y el estado del corredor (tráfico, incidentes) alimenta el contexto del AI Copilot.",
   },
   {
     q: "¿Puedo ver la plataforma en acción?",
@@ -30,7 +30,7 @@ export default function FAQ() {
     <section id="faq" className="py-24 grid-bg">
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="text-blue-400 text-sm font-medium uppercase tracking-widest mb-3">FAQ</p>
+          <p className="section-label mb-3">FAQ</p>
           <h2
             className="text-4xl md:text-5xl text-white"
             style={{ fontFamily: "Instrument Serif, serif" }}
@@ -49,7 +49,7 @@ export default function FAQ() {
               >
                 <span className="text-white font-medium pr-4">{item.q}</span>
                 <svg
-                  className={`w-5 h-5 text-slate-400 flex-shrink-0 transition-transform duration-200 ${open === i ? "rotate-180" : ""}`}
+                  className={`w-5 h-5 text-white/30 flex-shrink-0 transition-transform duration-200 ${open === i ? "rotate-180" : ""}`}
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -59,7 +59,7 @@ export default function FAQ() {
                 </svg>
               </button>
               {open === i && (
-                <div className="px-6 pb-5 text-slate-400 text-sm leading-relaxed border-t border-white/[0.05] pt-4">
+                <div className="px-6 pb-5 text-white/40 text-sm leading-relaxed border-t border-white/[0.05] pt-4">
                   {item.a}
                 </div>
               )}

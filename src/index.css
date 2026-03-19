@@ -12,12 +12,12 @@ html {
 }
 
 body {
-  background-color: #070b14;
-  color: #f8fafc;
+  background-color: #000;
+  color: #fff;
   overflow-x: hidden;
 }
 
-/* Reusable glass card effect */
+/* Glass card — light frosted surface on black */
 .glass {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -26,46 +26,54 @@ body {
 }
 
 .glass-strong {
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
 }
 
-/* Gradient text utility */
+/* Gradient text — crimson → pink → violet → bright blue */
 .gradient-text {
-  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+  background: linear-gradient(
+    135deg,
+    #ff4d6d 0%,
+    #f72585 22%,
+    #b5179e 44%,
+    #7209b7 62%,
+    #4361ee 82%,
+    #4cc9f0 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Glow effects */
-.glow-blue {
-  box-shadow: 0 0 40px rgba(96, 165, 250, 0.15);
-}
-
-.glow-violet {
-  box-shadow: 0 0 40px rgba(167, 139, 250, 0.15);
-}
-
-/* Subtle grid background */
+/* Subtle dot-grid background for interior sections */
 .grid-bg {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 60px 60px;
+    radial-gradient(circle, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
-/* Route pill / badge */
+/* Accretion glow breathing animation */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.82; transform: scale(1); }
+  50%       { opacity: 0.95; transform: scale(1.015); }
+}
+
+.accretion-glow {
+  animation: glow-pulse 8s ease-in-out infinite;
+}
+
+/* Route pill */
 .route-pill {
   font-family: "Azeret Mono", monospace;
-  font-size: 0.75rem;
-  padding: 0.2rem 0.6rem;
+  font-size: 0.72rem;
+  padding: 0.2rem 0.65rem;
   border-radius: 999px;
-  background: rgba(96, 165, 250, 0.1);
-  border: 1px solid rgba(96, 165, 250, 0.25);
-  color: #93c5fd;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 /* Tech badge */
@@ -74,7 +82,16 @@ body {
   font-size: 0.7rem;
   padding: 0.2rem 0.55rem;
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Section label (replaces colored text accents) */
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
 }

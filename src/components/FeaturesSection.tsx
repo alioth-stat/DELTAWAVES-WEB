@@ -44,20 +44,12 @@ const gemeloFeatures = [
   },
 ]
 
-function FeatureCard({
-  icon,
-  title,
-  desc,
-}: {
-  icon: string
-  title: string
-  desc: string
-}) {
+function FeatureCard({ icon, title, desc }: { icon: string; title: string; desc: string }) {
   return (
     <div className="glass rounded-xl p-5 flex flex-col gap-3 hover:bg-white/[0.06] transition-colors">
       <span className="text-2xl">{icon}</span>
       <h4 className="text-white font-medium text-sm">{title}</h4>
-      <p className="text-slate-400 text-sm leading-relaxed">{desc}</p>
+      <p className="text-white/40 text-sm leading-relaxed">{desc}</p>
     </div>
   )
 }
@@ -68,84 +60,57 @@ export default function FeaturesSection() {
       <div className="max-w-7xl mx-auto px-6 space-y-24">
 
         {/* TYR Features */}
-        <div>
-          <div className="flex flex-col md:flex-row gap-12 items-start">
-            <div className="md:w-1/3 flex-shrink-0">
-              <span className="route-pill mb-4 inline-block">TYR Logistics OS</span>
-              <h2
-                className="text-3xl md:text-4xl text-white mb-4"
-                style={{ fontFamily: "Instrument Serif, serif" }}
-              >
-                Gestión de envíos,{" "}
-                <span className="gradient-text italic">potenciada por IA</span>
-              </h2>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Una plataforma completa para operadores logísticos — desde el seguimiento de
-                contenedores hasta consultas en lenguaje natural con el copilot de IA.
-              </p>
-              <a
-                href="https://tyr-logistics-os.vercel.app/dashboard"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm text-blue-400 hover:text-blue-300 transition-colors"
-              >
-                Abrir dashboard →
-              </a>
-            </div>
-            <div className="flex-1 grid sm:grid-cols-2 gap-4">
-              {tyrFeatures.map((f) => (
-                <FeatureCard key={f.title} {...f} />
-              ))}
-            </div>
+        <div className="flex flex-col md:flex-row gap-12 items-start">
+          <div className="md:w-1/3 flex-shrink-0">
+            <span className="route-pill mb-4 inline-block">TYR Logistics OS</span>
+            <h2
+              className="text-3xl md:text-4xl text-white mb-4"
+              style={{ fontFamily: "Instrument Serif, serif" }}
+            >
+              Gestión de envíos,{" "}
+              <span className="gradient-text italic">potenciada por IA</span>
+            </h2>
+            <p className="text-white/40 text-sm leading-relaxed mb-6">
+              Una plataforma completa para operadores logísticos — desde el seguimiento de
+              contenedores hasta consultas en lenguaje natural con el copilot de IA.
+            </p>
+            <a
+              href="https://tyr-logistics-os.vercel.app/dashboard"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-white/50 hover:text-white transition-colors"
+            >
+              Abrir dashboard →
+            </a>
+          </div>
+          <div className="flex-1 grid sm:grid-cols-2 gap-4">
+            {tyrFeatures.map((f) => <FeatureCard key={f.title} {...f} />)}
           </div>
         </div>
 
-        {/* Divider */}
         <div className="border-t border-white/[0.05]" />
 
         {/* Gemelo Features */}
-        <div>
-          <div className="flex flex-col md:flex-row-reverse gap-12 items-start">
-            <div className="md:w-1/3 flex-shrink-0">
-              <span
-                className="inline-block mb-4 text-xs px-3 py-1 rounded-full border font-mono"
-                style={{
-                  fontFamily: "Azeret Mono, monospace",
-                  background: "rgba(167,139,250,0.1)",
-                  borderColor: "rgba(167,139,250,0.25)",
-                  color: "#c4b5fd",
-                }}
-              >
-                Gemelo Centenario
-              </span>
-              <h2
-                className="text-3xl md:text-4xl text-white mb-4"
-                style={{ fontFamily: "Instrument Serif, serif" }}
-              >
-                La Vía Centenario,{" "}
-                <span
-                  style={{
-                    background: "linear-gradient(135deg, #a78bfa 0%, #60a5fa 100%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                    fontStyle: "italic",
-                  }}
-                >
-                  en digital
-                </span>
-              </h2>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Un gemelo digital que simula el corredor logístico más importante de Panamá,
-                con escenarios de congestión, accidentes y eventos especiales.
-              </p>
-              <span className="text-sm text-slate-600 italic">Disponible en la plataforma unificada · /twin</span>
-            </div>
-            <div className="flex-1 grid sm:grid-cols-2 gap-4">
-              {gemeloFeatures.map((f) => (
-                <FeatureCard key={f.title} {...f} />
-              ))}
-            </div>
+        <div className="flex flex-col md:flex-row-reverse gap-12 items-start">
+          <div className="md:w-1/3 flex-shrink-0">
+            <span className="route-pill mb-4 inline-block">Gemelo Centenario</span>
+            <h2
+              className="text-3xl md:text-4xl text-white mb-4"
+              style={{ fontFamily: "Instrument Serif, serif" }}
+            >
+              La Vía Centenario,{" "}
+              <span className="gradient-text italic">en digital</span>
+            </h2>
+            <p className="text-white/40 text-sm leading-relaxed mb-6">
+              Un gemelo digital que simula el corredor logístico más importante de Panamá,
+              con escenarios de congestión, accidentes y eventos especiales.
+            </p>
+            <span className="text-sm text-white/25 italic">
+              Disponible en la plataforma unificada · /twin
+            </span>
+          </div>
+          <div className="flex-1 grid sm:grid-cols-2 gap-4">
+            {gemeloFeatures.map((f) => <FeatureCard key={f.title} {...f} />)}
           </div>
         </div>
 

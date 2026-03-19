@@ -5,19 +5,22 @@ export default function CTABanner() {
         <div
           className="relative rounded-3xl overflow-hidden p-12 text-center"
           style={{
-            background: "linear-gradient(135deg, rgba(37,99,235,0.2) 0%, rgba(124,58,237,0.2) 100%)",
-            border: "1px solid rgba(255,255,255,0.1)",
+            background: "linear-gradient(135deg, rgba(255,26,64,0.15) 0%, rgba(114,9,183,0.15) 50%, rgba(67,97,238,0.15) 100%)",
+            border: "1px solid rgba(255,255,255,0.08)",
           }}
         >
-          {/* Background glow */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-48 bg-blue-600/20 rounded-full blur-[80px]" />
-          </div>
+          {/* Glow behind the banner */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                "radial-gradient(60% 60% at 50% 50%, rgba(114,9,183,0.12) 0%, transparent 100%)",
+            }}
+          />
 
           <div className="relative z-10">
-            <p className="text-blue-300 text-sm font-medium uppercase tracking-widest mb-4">
-              Expo Logística Panamá · 11 Mar 2026
-            </p>
+            <p className="section-label mb-4">Expo Logística Panamá · 11 Mar 2026</p>
             <h2
               className="text-4xl md:text-5xl text-white mb-6"
               style={{ fontFamily: "Instrument Serif, serif" }}
@@ -25,7 +28,7 @@ export default function CTABanner() {
               Encuéntranos en{" "}
               <span className="gradient-text italic">Expo Logística 2026</span>
             </h2>
-            <p className="text-slate-300 text-lg max-w-xl mx-auto mb-8 leading-relaxed">
+            <p className="text-white/40 text-lg max-w-xl mx-auto mb-8 leading-relaxed">
               Demo en vivo de TYR Logistics OS y el Gemelo Centenario. El futuro de la
               logística panameña, construido por estudiantes del ITSE.
             </p>
@@ -34,7 +37,7 @@ export default function CTABanner() {
                 href="https://tyr-logistics-os.vercel.app/dashboard"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium transition-all hover:scale-[1.02]"
+                className="flex items-center gap-2 px-8 py-3.5 rounded-xl bg-white text-black font-medium hover:bg-white/90 transition-all hover:scale-[1.02]"
               >
                 Ver TYR en Vercel
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
